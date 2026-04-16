@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dqnhym6r8k7o4"]
+
+[ext_resource type="Script" uid="uid://bm274aq662g8t" path="res://universe.gd" id="1_ol24e"]
+[ext_resource type="Script" uid="uid://dmhg5rd2hesv3" path="res://world.gd" id="2_tcg2k"]
+[ext_resource type="Script" uid="uid://hd5pqnqu57bc" path="res://behaviours/navigation.gd" id="3_ncg7h"]
+[ext_resource type="Script" uid="uid://duid6lqqlb41g" path="res://display.gd" id="3_ol24e"]
+[ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://behaviours/entity_base.gd" id="3_u640v"]
+[ext_resource type="Script" uid="uid://1q1v4u1cebx" path="res://a_star_grid.gd" id="4_d0y5q"]
+[ext_resource type="Script" uid="uid://ddv1p1a3v141t" path="res://procgen/rooms_and_corridors.gd" id="4_wp8oq"]
+[ext_resource type="TileSet" uid="uid://dxn8wvnlypety" path="res://tiles/tileset/cp347_tileset.tres" id="5_e2blk"]
+[ext_resource type="Script" uid="uid://1olf5b3fuwt2" path="res://procgen/factory_layout.gd" id="5_wp8oq"]
+[ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://recharge_machines.gd" id="8_sraih"]
+
+[node name="Universe" type="Node" unique_id=1125771903]
+script = ExtResource("1_ol24e")
+
+[node name="World" type="Node" parent="." unique_id=1505032723]
+unique_name_in_owner = true
+script = ExtResource("2_tcg2k")
+
+[node name="Entities" type="Node" parent="World" unique_id=844141156]
+unique_name_in_owner = true
+
+[node name="WanderBot" type="Node" parent="World/Entities" unique_id=1284519825]
+script = ExtResource("3_u640v")
+
+[node name="Navigation" type="Node" parent="World/Entities/WanderBot" unique_id=1811146124]
+script = ExtResource("3_ncg7h")
+
+[node name="AStarGrid" type="Node" parent="World" unique_id=2051265867]
+unique_name_in_owner = true
+script = ExtResource("4_d0y5q")
+
+[node name="ProcGen" type="Node" parent="World" unique_id=791997846]
+unique_name_in_owner = true
+
+[node name="RoomsAndCorridors" type="Node" parent="World/ProcGen" unique_id=1402804312]
+script = ExtResource("4_wp8oq")
+
+[node name="FactoryLayout" type="Node" parent="World/ProcGen" unique_id=840544919]
+script = ExtResource("5_wp8oq")
+
+[node name="RechargeMachines" type="Node" parent="World" unique_id=325979576]
+script = ExtResource("8_sraih")
+
+[node name="Display" type="Node2D" parent="." unique_id=1970916088]
+unique_name_in_owner = true
+script = ExtResource("3_ol24e")
+
+[node name="TerrainTileMap" type="TileMapLayer" parent="Display" unique_id=1310653025]
+tile_set = ExtResource("5_e2blk")
+
+[node name="EntitiesTileMap" type="TileMapLayer" parent="Display" unique_id=1163741175]
+tile_set = ExtResource("5_e2blk")
+y_sort_origin = 5
