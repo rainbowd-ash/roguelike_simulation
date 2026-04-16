@@ -7,7 +7,7 @@ var astar_grid : AStarGrid2D
 ## false = blocked spaces
 func update_grid(empty_spaces:Array[Array]) -> void:
 	astar_grid = AStarGrid2D.new()
-	astar_grid.region = Rect2(0,0,empty_spaces.size(), empty_spaces[0].size())
+	astar_grid.region = Rect2(0,0,empty_spaces[0].size(),empty_spaces.size())
 	astar_grid.update()
 	for y in empty_spaces.size():
 		for x in empty_spaces[y].size():

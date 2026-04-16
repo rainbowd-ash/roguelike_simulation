@@ -51,6 +51,10 @@ script = ExtResource("3_ol24e")
 [node name="TerrainTileMap" type="TileMapLayer" parent="Display" unique_id=1310653025]
 tile_set = ExtResource("5_e2blk")
 
+[node name="MachinesTileMap" type="TileMapLayer" parent="Display" unique_id=76756465]
+tile_set = ExtResource("5_e2blk")
+y_sort_origin = 5
+
 [node name="EntitiesTileMap" type="TileMapLayer" parent="Display" unique_id=1163741175]
 tile_set = ExtResource("5_e2blk")
 y_sort_origin = 5

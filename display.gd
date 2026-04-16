@@ -3,8 +3,11 @@ extends Node2D
 func _ready() -> void:
 	for child in %Entities.get_children():
 		child.changed_position.connect(on_entity_changed_position)
+	draw_everything()
+
+func draw_everything():
 	draw_terrain()
-	#nav_test()
+	draw_recharge_machines()
 	draw_entities()
 
 func draw_terrain():
@@ -14,6 +17,13 @@ func draw_terrain():
 		for x in terrain[y].size():
 			var sprite_id = terrain[y][x]
 			$TerrainTileMap.set_cell(Vector2(x, y),0,terrain[y][x].sprite_id)
+
+func draw_recharge_machines():
+	$MachinesTileMap.clear()
+	var tile = %RechargeMachines.tile
+	for machine in %RechargeMachines.array_of_machines:
+		var loc = Vector2(machine.x,machine.y)
+		$MachinesTileMap.set_cell(Vector2(loc),0,tile)
 
 func draw_entities():
 	$EntitiesTileMap.clear()
