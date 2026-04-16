@@ -19,12 +19,22 @@ func _ready() -> void:
 
 func world_gen():
 	terrain.clear()
+	var floor_space:Array[Array]
+	for y in height:
+		var row := []
+		for x in width:
+			row.append(true)
+		floor_space.append(row)
 	for y in height:
 		var row := []
 		for x in width:
 			row.append(FLOOR)
 		terrain.append(row)
-	%AStarGrid.update_grid()
+	var rechargers = %RechargeMachines.distribute_randomly(floor_space,4)
+	for i in rechargers.size():
+		var location = rechargers[i]
+		floor_space[location.y][location.x] = false
+	%AStarGrid.update_grid(floor_space)
 
 func set_cell(location : Vector2i, value) -> void:
 	var x = location.x

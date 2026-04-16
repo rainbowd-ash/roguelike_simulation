@@ -2,9 +2,18 @@ extends Node
 
 var tile : Vector2 = Vector2(2,5)
 
+var recharge_machines : Array[Vector2i]
+
 ## Takes a 2d boolean array of valid spaces
-## Returns a 2d bool array of placements
-func distribute_randomly(terrain:Array[Array], amount:int):
-	if amount == null:
-		amount = 4
-	print(str(amount))
+## Returns a list of vector2s with the locations
+func distribute_randomly(valid_spaces:Array[Array], amount:int):
+	# make a list of all the available spaces by coordinate, pick amount of them
+		# probably a silly and inneficient way to do this but it doesn't matter since it happens during startup
+			# hide it with an animation (^_-)-☆
+	var list_of_spaces:Array[Vector2i]
+	for y in valid_spaces.size():
+		for x in valid_spaces[y]:
+			list_of_spaces.append(Vector2i(x,y))
+	list_of_spaces.shuffle()
+	recharge_machines = list_of_spaces.slice(0,amount)
+	return recharge_machines

@@ -41,6 +41,7 @@ script = ExtResource("4_wp8oq")
 script = ExtResource("5_wp8oq")
 
 [node name="RechargeMachines" type="Node" parent="World" unique_id=325979576]
+unique_name_in_owner = true
 script = ExtResource("8_sraih")
 
 [node name="Display" type="Node2D" parent="." unique_id=1970916088]
