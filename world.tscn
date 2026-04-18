@@ -1,54 +1,54 @@
 [gd_scene format=3 uid="uid://dqnhym6r8k7o4"]
 
-[ext_resource type="Script" uid="uid://dmhg5rd2hesv3" path="res://world.gd" id="2_tcg2k"]
-[ext_resource type="Script" uid="uid://hd5pqnqu57bc" path="res://robot_components/navigation.gd" id="3_ncg7h"]
-[ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="3_u640v"]
-[ext_resource type="Script" uid="uid://1q1v4u1cebx" path="res://a_star_grid.gd" id="4_d0y5q"]
-[ext_resource type="Script" uid="uid://ddv1p1a3v141t" path="res://procgen/rooms_and_corridors.gd" id="4_wp8oq"]
-[ext_resource type="Script" uid="uid://cofeonw2tmeay" path="res://robot_components/power_source.gd" id="5_asrgw"]
-[ext_resource type="Script" uid="uid://1olf5b3fuwt2" path="res://procgen/factory_layout.gd" id="5_wp8oq"]
-[ext_resource type="Texture2D" uid="uid://decugfypnphwq" path="res://tiles/tileset/floor.png" id="6_h0rt2"]
-[ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://interactables/recharge_machines.gd" id="8_sraih"]
-[ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="11_2cpxq"]
+[ext_resource type="Script" uid="uid://dmhg5rd2hesv3" path="res://world.gd" id="1_wse8f"]
+[ext_resource type="Script" uid="uid://1q1v4u1cebx" path="res://a_star_grid.gd" id="2_ic0uy"]
+[ext_resource type="Script" uid="uid://ddv1p1a3v141t" path="res://procgen/rooms_and_corridors.gd" id="3_k3n1d"]
+[ext_resource type="Script" uid="uid://1olf5b3fuwt2" path="res://procgen/factory_layout.gd" id="4_2o6r5"]
+[ext_resource type="Texture2D" uid="uid://decugfypnphwq" path="res://tiles/tileset/floor.png" id="5_70uel"]
+[ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="6_hiqwa"]
+[ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="7_2u3nc"]
+[ext_resource type="Script" uid="uid://hd5pqnqu57bc" path="res://robot_components/navigation.gd" id="8_udxuc"]
+[ext_resource type="Script" uid="uid://cofeonw2tmeay" path="res://robot_components/power_source.gd" id="9_ikiii"]
+[ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://interactables/recharge_machines.gd" id="10_cbp6q"]
 
 [node name="World" type="Node2D" unique_id=1242992929]
-script = ExtResource("2_tcg2k")
+script = ExtResource("1_wse8f")
 
 [node name="AStarGrid" type="Node" parent="." unique_id=2051265867]
 unique_name_in_owner = true
-script = ExtResource("4_d0y5q")
+script = ExtResource("2_ic0uy")
 
 [node name="ProcGen" type="Node" parent="." unique_id=791997846]
 unique_name_in_owner = true
 
 [node name="RoomsAndCorridors" type="Node" parent="ProcGen" unique_id=1402804312]
-script = ExtResource("4_wp8oq")
+script = ExtResource("3_k3n1d")
 
 [node name="FactoryLayout" type="Node" parent="ProcGen" unique_id=840544919]
-script = ExtResource("5_wp8oq")
+script = ExtResource("4_2o6r5")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=550603305]
 modulate = Color(0.5890956, 0.5890956, 0.5890956, 1)
-texture = ExtResource("6_h0rt2")
+texture = ExtResource("5_70uel")
 centered = false
 
 [node name="Entities" type="Node2D" parent="." unique_id=1466909826]
 unique_name_in_owner = true
 
 [node name="WanderBot" type="Node2D" parent="Entities" unique_id=84570191]
-script = ExtResource("3_u640v")
+script = ExtResource("6_hiqwa")
 
 [node name="Sprite" type="Sprite2D" parent="Entities/WanderBot" unique_id=2116703556]
 position = Vector2(5, 5)
-texture = ExtResource("11_2cpxq")
+texture = ExtResource("7_2u3nc")
 region_enabled = true
 region_rect = Rect2(110, 60, 10, 10)
 
 [node name="Navigation" type="Node" parent="Entities/WanderBot" unique_id=1811146124]
-script = ExtResource("3_ncg7h")
+script = ExtResource("8_udxuc")
 
 [node name="Battery" type="Node" parent="Entities/WanderBot" unique_id=2058676489]
-script = ExtResource("5_asrgw")
+script = ExtResource("9_ikiii")
 
 [node name="Interactables" type="Node2D" parent="." unique_id=2093705675]
 
@@ -60,10 +60,10 @@ script = ExtResource("5_asrgw")
 
 [node name="RechargeMachines" type="Node2D" parent="Interactables" unique_id=389316661]
 unique_name_in_owner = true
-script = ExtResource("8_sraih")
+script = ExtResource("10_cbp6q")
 
 [node name="RechargeMachine" type="Sprite2D" parent="Interactables/RechargeMachines" unique_id=672912648]
-texture = ExtResource("11_2cpxq")
+texture = ExtResource("7_2u3nc")
 centered = false
 region_enabled = true
 region_rect = Rect2(20, 50, 10, 10)
