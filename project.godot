@@ -14,6 +14,10 @@ config/name="roguelike_simulation"
 run/main_scene="uid://dqnhym6r8k7o4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+Grid="*uid://bgnh732haal63"
+
 [display]
 
 window/size/viewport_width=1500
