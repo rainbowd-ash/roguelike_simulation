@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dmhg5rd2hesv3" path="res://world.gd" id="1_wse8f"]
 [ext_resource type="Script" uid="uid://1q1v4u1cebx" path="res://a_star_grid.gd" id="2_ic0uy"]
-[ext_resource type="Script" uid="uid://ddv1p1a3v141t" path="res://procgen/rooms_and_corridors.gd" id="3_k3n1d"]
-[ext_resource type="Script" uid="uid://1olf5b3fuwt2" path="res://procgen/factory_layout.gd" id="4_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://decugfypnphwq" path="res://tiles/tileset/floor.png" id="5_70uel"]
 [ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="6_hiqwa"]
 [ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="7_2u3nc"]
@@ -17,15 +15,6 @@ script = ExtResource("1_wse8f")
 [node name="AStarGrid" type="Node" parent="." unique_id=2051265867]
 unique_name_in_owner = true
 script = ExtResource("2_ic0uy")
-
-[node name="ProcGen" type="Node" parent="." unique_id=791997846]
-unique_name_in_owner = true
-
-[node name="RoomsAndCorridors" type="Node" parent="ProcGen" unique_id=1402804312]
-script = ExtResource("3_k3n1d")
-
-[node name="FactoryLayout" type="Node" parent="ProcGen" unique_id=840544919]
-script = ExtResource("4_2o6r5")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=550603305]
 modulate = Color(0.5890956, 0.5890956, 0.5890956, 1)
