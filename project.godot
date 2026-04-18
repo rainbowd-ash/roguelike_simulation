@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [display]
 
 window/size/viewport_width=1500
-window/size/viewport_height=890
+window/size/viewport_height=900
 window/stretch/mode="viewport"
 
 [physics]
@@ -27,5 +27,6 @@ common/physics_ticks_per_second=10
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 2d/snap/snap_2d_transforms_to_pixel=true

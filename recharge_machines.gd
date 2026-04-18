@@ -16,6 +16,12 @@ func distribute_randomly(valid_spaces:Array[Array], amount:int):
 			list_of_spaces.append(Vector2(x,y))
 	list_of_spaces.shuffle()
 	array_of_machines = list_of_spaces.slice(0,amount)
-	if amount > list_of_spaces.size():
+	for machine in array_of_machines:
+		var new_tile = $Sprite.duplicate()
+		add_child(new_tile)
+		new_tile.show()
+		var machine_position = Vector2(machine)
+		new_tile.position = Vector2(
+			machine_position.x * 10, 
+			machine_position.y * 10)
 		return array_of_machines
-	return array_of_machines

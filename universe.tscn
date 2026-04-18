@@ -13,18 +13,47 @@
 [ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://recharge_machines.gd" id="8_sraih"]
 [ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="11_2cpxq"]
 
-[node name="Universe" type="Node" unique_id=1125771903]
+[node name="Universe" type="Node2D" unique_id=761292419]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ol24e")
 
-[node name="World" type="Node" parent="." unique_id=1505032723]
+[node name="AStarGrid" type="Node" parent="." unique_id=2051265867]
+unique_name_in_owner = true
+script = ExtResource("4_d0y5q")
+
+[node name="ProcGen" type="Node" parent="." unique_id=791997846]
+unique_name_in_owner = true
+
+[node name="RoomsAndCorridors" type="Node" parent="ProcGen" unique_id=1402804312]
+script = ExtResource("4_wp8oq")
+
+[node name="FactoryLayout" type="Node" parent="ProcGen" unique_id=840544919]
+script = ExtResource("5_wp8oq")
+
+[node name="World" type="Node2D" parent="." unique_id=1242992929]
 unique_name_in_owner = true
 script = ExtResource("2_tcg2k")
 
-[node name="Entities" type="Node" parent="World" unique_id=844141156]
+[node name="Floor" type="Node2D" parent="World" unique_id=1525957659]
+
+[node name="Tile" type="Sprite2D" parent="World" unique_id=759685757]
+unique_name_in_owner = true
+position = Vector2(5, 5)
+texture = ExtResource("11_2cpxq")
+region_enabled = true
+region_rect = Rect2(0, 0, 10, 10)
+
+[node name="Entities" type="Node2D" parent="World" unique_id=1466909826]
 unique_name_in_owner = true
 
-[node name="WanderBot" type="Node" parent="World/Entities" unique_id=1284519825]
+[node name="WanderBot" type="Node2D" parent="World/Entities" unique_id=84570191]
 script = ExtResource("3_u640v")
+
+[node name="Sprite" type="Sprite2D" parent="World/Entities/WanderBot" unique_id=2116703556]
+position = Vector2(5, 5)
+texture = ExtResource("11_2cpxq")
+region_enabled = true
+region_rect = Rect2(110, 60, 10, 10)
 
 [node name="Navigation" type="Node" parent="World/Entities/WanderBot" unique_id=1811146124]
 script = ExtResource("3_ncg7h")
@@ -32,41 +61,28 @@ script = ExtResource("3_ncg7h")
 [node name="Battery" type="Node" parent="World/Entities/WanderBot" unique_id=2058676489]
 script = ExtResource("5_asrgw")
 
-[node name="AStarGrid" type="Node" parent="World" unique_id=2051265867]
-unique_name_in_owner = true
-script = ExtResource("4_d0y5q")
+[node name="Interactables" type="Node2D" parent="World" unique_id=2093705675]
 
-[node name="ProcGen" type="Node" parent="World" unique_id=791997846]
-unique_name_in_owner = true
+[node name="Import" type="Node2D" parent="World/Interactables" unique_id=546929218]
 
-[node name="RoomsAndCorridors" type="Node" parent="World/ProcGen" unique_id=1402804312]
-script = ExtResource("4_wp8oq")
+[node name="Export" type="Node2D" parent="World/Interactables" unique_id=480914285]
 
-[node name="FactoryLayout" type="Node" parent="World/ProcGen" unique_id=840544919]
-script = ExtResource("5_wp8oq")
+[node name="Forge" type="Node2D" parent="World/Interactables" unique_id=1931415984]
 
-[node name="Interactables" type="Node" parent="World" unique_id=1877980904]
-
-[node name="Import" type="Node" parent="World/Interactables" unique_id=661108519]
-
-[node name="Export" type="Node" parent="World/Interactables" unique_id=1106182515]
-
-[node name="Forge" type="Node" parent="World/Interactables" unique_id=1718175065]
-
-[node name="RechargeMachines" type="Node" parent="World/Interactables" unique_id=325979576]
+[node name="RechargeMachines" type="Node2D" parent="World/Interactables" unique_id=389316661]
 unique_name_in_owner = true
 script = ExtResource("8_sraih")
 
-[node name="Display" type="Node2D" parent="." unique_id=1970916088]
-unique_name_in_owner = true
-scale = Vector2(1.5, 1.5)
-script = ExtResource("3_ol24e")
-
-[node name="Tile" type="Sprite2D" parent="Display" unique_id=759685757]
+[node name="Sprite" type="Sprite2D" parent="World/Interactables/RechargeMachines" unique_id=672912648]
 visible = false
+position = Vector2(5, 5)
 texture = ExtResource("11_2cpxq")
 region_enabled = true
-region_rect = Rect2(0, 0, 10, 10)
+region_rect = Rect2(20, 50, 10, 10)
+
+[node name="Display" type="Node2D" parent="." unique_id=1970916088]
+unique_name_in_owner = true
+script = ExtResource("3_ol24e")
 
 [node name="TerrainTiles" type="Node2D" parent="Display" unique_id=58291705]
 modulate = Color(0.38928655, 0.38928664, 0.38928658, 1)
@@ -76,10 +92,5 @@ modulate = Color(0.38928655, 0.38928664, 0.38928658, 1)
 [node name="MachinesTileMap" type="TileMapLayer" parent="Display" unique_id=76756465]
 unique_name_in_owner = true
 visible = false
-tile_set = ExtResource("5_e2blk")
-y_sort_origin = 5
-
-[node name="EntitiesTileMap" type="TileMapLayer" parent="Display" unique_id=1163741175]
-unique_name_in_owner = true
 tile_set = ExtResource("5_e2blk")
 y_sort_origin = 5

@@ -1,5 +1,5 @@
 class_name World
-extends Node
+extends Node2D
 
 var width : int = 100
 var height : int = 60
