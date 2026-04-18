@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dqnhym6r8k7o4"]
+
+[ext_resource type="Script" uid="uid://dmhg5rd2hesv3" path="res://world.gd" id="2_tcg2k"]
+[ext_resource type="Script" uid="uid://hd5pqnqu57bc" path="res://robot_components/navigation.gd" id="3_ncg7h"]
+[ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="3_u640v"]
+[ext_resource type="Script" uid="uid://1q1v4u1cebx" path="res://a_star_grid.gd" id="4_d0y5q"]
+[ext_resource type="Script" uid="uid://ddv1p1a3v141t" path="res://procgen/rooms_and_corridors.gd" id="4_wp8oq"]
+[ext_resource type="Script" uid="uid://cofeonw2tmeay" path="res://robot_components/power_source.gd" id="5_asrgw"]
+[ext_resource type="Script" uid="uid://1olf5b3fuwt2" path="res://procgen/factory_layout.gd" id="5_wp8oq"]
+[ext_resource type="Texture2D" uid="uid://decugfypnphwq" path="res://tiles/tileset/floor.png" id="6_h0rt2"]
+[ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://interactables/recharge_machines.gd" id="8_sraih"]
+[ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="11_2cpxq"]
+
+[node name="World" type="Node2D" unique_id=1242992929]
+script = ExtResource("2_tcg2k")
+
+[node name="AStarGrid" type="Node" parent="." unique_id=2051265867]
+unique_name_in_owner = true
+script = ExtResource("4_d0y5q")
+
+[node name="ProcGen" type="Node" parent="." unique_id=791997846]
+unique_name_in_owner = true
+
+[node name="RoomsAndCorridors" type="Node" parent="ProcGen" unique_id=1402804312]
+script = ExtResource("4_wp8oq")
+
+[node name="FactoryLayout" type="Node" parent="ProcGen" unique_id=840544919]
+script = ExtResource("5_wp8oq")
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=550603305]
+modulate = Color(0.5890956, 0.5890956, 0.5890956, 1)
+texture = ExtResource("6_h0rt2")
+centered = false
+
+[node name="Entities" type="Node2D" parent="." unique_id=1466909826]
+unique_name_in_owner = true
+
+[node name="WanderBot" type="Node2D" parent="Entities" unique_id=84570191]
+script = ExtResource("3_u640v")
+
+[node name="Sprite" type="Sprite2D" parent="Entities/WanderBot" unique_id=2116703556]
+position = Vector2(5, 5)
+texture = ExtResource("11_2cpxq")
+region_enabled = true
+region_rect = Rect2(110, 60, 10, 10)
+
+[node name="Navigation" type="Node" parent="Entities/WanderBot" unique_id=1811146124]
+script = ExtResource("3_ncg7h")
+
+[node name="Battery" type="Node" parent="Entities/WanderBot" unique_id=2058676489]
+script = ExtResource("5_asrgw")
+
+[node name="Interactables" type="Node2D" parent="." unique_id=2093705675]
+
+[node name="Import" type="Node2D" parent="Interactables" unique_id=546929218]
+
+[node name="Export" type="Node2D" parent="Interactables" unique_id=480914285]
+
+[node name="Forge" type="Node2D" parent="Interactables" unique_id=1931415984]
+
+[node name="RechargeMachines" type="Node2D" parent="Interactables" unique_id=389316661]
+unique_name_in_owner = true
+script = ExtResource("8_sraih")
+
+[node name="RechargeMachine" type="Sprite2D" parent="Interactables/RechargeMachines" unique_id=672912648]
+texture = ExtResource("11_2cpxq")
+centered = false
+region_enabled = true
+region_rect = Rect2(20, 50, 10, 10)

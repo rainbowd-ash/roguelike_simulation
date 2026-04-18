@@ -28,10 +28,10 @@ func world_gen():
 		for x in width:
 			row.append(FLOOR)
 		terrain.append(row)
-	var rechargers = %RechargeMachines.distribute_randomly(floor_space,4)
-	for i in rechargers.size():
-		var location = rechargers[i]
-		floor_space[location.y][location.x] = false
+	#var rechargers = %RechargeMachines.distribute_randomly(floor_space,4)
+	#for i in rechargers.size():
+		#var location = rechargers[i]
+		#floor_space[location.y][location.x] = false
 	%AStarGrid.update_grid(floor_space)
 
 func set_cell(location : Vector2i, value) -> void:
@@ -51,4 +51,4 @@ func rectangle_procgen():
 			if x == 0 or x == size.x - 1 or y == 0 or y == size.y - 1:
 				var cell = top_left + Vector2i(x, y)
 				set_cell(cell, WALL)
-	%Display.draw_terrain()
+	#%Display.draw_terrain()

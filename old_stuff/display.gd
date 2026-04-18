@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func draw_everything():
 	draw_terrain()
-	draw_recharge_machines()
+	#draw_recharge_machines()
 
 func draw_terrain():
 	for child in $TerrainTiles.get_children():
