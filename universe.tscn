@@ -11,6 +11,7 @@
 [ext_resource type="TileSet" uid="uid://dxn8wvnlypety" path="res://tiles/tileset/cp347_tileset.tres" id="5_e2blk"]
 [ext_resource type="Script" uid="uid://1olf5b3fuwt2" path="res://procgen/factory_layout.gd" id="5_wp8oq"]
 [ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://recharge_machines.gd" id="8_sraih"]
+[ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="11_2cpxq"]
 
 [node name="Universe" type="Node" unique_id=1125771903]
 script = ExtResource("1_ol24e")
@@ -59,6 +60,16 @@ script = ExtResource("8_sraih")
 [node name="Display" type="Node2D" parent="." unique_id=1970916088]
 unique_name_in_owner = true
 script = ExtResource("3_ol24e")
+
+[node name="Tile" type="Sprite2D" parent="Display" unique_id=759685757]
+visible = false
+texture = ExtResource("11_2cpxq")
+region_enabled = true
+region_rect = Rect2(0, 0, 10, 10)
+
+[node name="TerrainTiles" type="Node2D" parent="Display" unique_id=58291705]
+modulate = Color(0.38928655, 0.38928664, 0.38928658, 1)
+scale = Vector2(2, 2)
 
 [node name="TerrainTileMap" type="TileMapLayer" parent="Display" unique_id=1310653025]
 unique_name_in_owner = true
