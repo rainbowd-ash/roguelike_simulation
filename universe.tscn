@@ -59,6 +59,7 @@ script = ExtResource("8_sraih")
 
 [node name="Display" type="Node2D" parent="." unique_id=1970916088]
 unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
 script = ExtResource("3_ol24e")
 
 [node name="Tile" type="Sprite2D" parent="Display" unique_id=759685757]
@@ -69,15 +70,12 @@ region_rect = Rect2(0, 0, 10, 10)
 
 [node name="TerrainTiles" type="Node2D" parent="Display" unique_id=58291705]
 modulate = Color(0.38928655, 0.38928664, 0.38928658, 1)
-scale = Vector2(2, 2)
 
-[node name="TerrainTileMap" type="TileMapLayer" parent="Display" unique_id=1310653025]
-unique_name_in_owner = true
-modulate = Color(0.44291073, 0.4429108, 0.4429106, 1)
-tile_set = ExtResource("5_e2blk")
+[node name="MachinesTiles" type="Node2D" parent="Display" unique_id=640530958]
 
 [node name="MachinesTileMap" type="TileMapLayer" parent="Display" unique_id=76756465]
 unique_name_in_owner = true
+visible = false
 tile_set = ExtResource("5_e2blk")
 y_sort_origin = 5
 

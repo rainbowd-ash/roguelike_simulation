@@ -1,8 +1,6 @@
 class_name World
 extends Node
 
-signal terrain_changed
-
 var width : int = 100
 var height : int = 60
 
