@@ -3,6 +3,8 @@ extends Node
 
 signal changed_position
 
+@export var power_source : PowerSource
+
 var world_position : Vector2i = Vector2i.ZERO
 
 func move_to(position : Vector2i):
