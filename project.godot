@@ -14,6 +14,14 @@ config/name="roguelike_simulation"
 run/main_scene="uid://dqnhym6r8k7o4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[display]
+
+window/size/viewport_width=1500
+window/size/viewport_height=890
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/stretch/scale=1.5
+
 [physics]
 
 common/physics_ticks_per_second=10

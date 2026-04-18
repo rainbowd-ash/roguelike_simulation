@@ -44,7 +44,15 @@ script = ExtResource("4_wp8oq")
 [node name="FactoryLayout" type="Node" parent="World/ProcGen" unique_id=840544919]
 script = ExtResource("5_wp8oq")
 
-[node name="RechargeMachines" type="Node" parent="World" unique_id=325979576]
+[node name="Interactables" type="Node" parent="World" unique_id=1877980904]
+
+[node name="Import" type="Node" parent="World/Interactables" unique_id=661108519]
+
+[node name="Export" type="Node" parent="World/Interactables" unique_id=1106182515]
+
+[node name="Forge" type="Node" parent="World/Interactables" unique_id=1718175065]
+
+[node name="RechargeMachines" type="Node" parent="World/Interactables" unique_id=325979576]
 unique_name_in_owner = true
 script = ExtResource("8_sraih")
 
@@ -53,12 +61,16 @@ unique_name_in_owner = true
 script = ExtResource("3_ol24e")
 
 [node name="TerrainTileMap" type="TileMapLayer" parent="Display" unique_id=1310653025]
+unique_name_in_owner = true
+modulate = Color(0.44291073, 0.4429108, 0.4429106, 1)
 tile_set = ExtResource("5_e2blk")
 
 [node name="MachinesTileMap" type="TileMapLayer" parent="Display" unique_id=76756465]
+unique_name_in_owner = true
 tile_set = ExtResource("5_e2blk")
 y_sort_origin = 5
 
 [node name="EntitiesTileMap" type="TileMapLayer" parent="Display" unique_id=1163741175]
+unique_name_in_owner = true
 tile_set = ExtResource("5_e2blk")
 y_sort_origin = 5
