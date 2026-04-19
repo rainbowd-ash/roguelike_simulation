@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://decugfypnphwq" path="res://tiles/tileset/floor.png" id="5_70uel"]
 [ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="6_hiqwa"]
 [ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="7_2u3nc"]
-[ext_resource type="Script" uid="uid://hd5pqnqu57bc" path="res://robot_components/navigation.gd" id="8_udxuc"]
 [ext_resource type="Script" uid="uid://cofeonw2tmeay" path="res://robot_components/power_source.gd" id="9_ikiii"]
 [ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://interactables/recharge_machines.gd" id="10_cbp6q"]
 
@@ -35,7 +34,6 @@ region_enabled = true
 region_rect = Rect2(110, 60, 10, 10)
 
 [node name="Navigation" type="Node" parent="Entities/WanderBot" unique_id=1811146124]
-script = ExtResource("8_udxuc")
 
 [node name="Battery" type="Node" parent="Entities/WanderBot" unique_id=2058676489]
 script = ExtResource("9_ikiii")
@@ -53,21 +51,21 @@ unique_name_in_owner = true
 script = ExtResource("10_cbp6q")
 
 [node name="RechargeMachine" type="Sprite2D" parent="Interactables/RechargeMachines" unique_id=672912648]
-position = Vector2(10, 10)
+position = Vector2(250, 220)
 texture = ExtResource("7_2u3nc")
 centered = false
 region_enabled = true
 region_rect = Rect2(20, 50, 10, 10)
 
 [node name="RechargeMachine2" type="Sprite2D" parent="Interactables/RechargeMachines" unique_id=320597661]
-position = Vector2(0, 80)
+position = Vector2(730, 80)
 texture = ExtResource("7_2u3nc")
 centered = false
 region_enabled = true
 region_rect = Rect2(20, 50, 10, 10)
 
 [node name="RechargeMachine3" type="Sprite2D" parent="Interactables/RechargeMachines" unique_id=402532436]
-position = Vector2(0, 130)
+position = Vector2(630, 350)
 texture = ExtResource("7_2u3nc")
 centered = false
 region_enabled = true
