@@ -14,3 +14,16 @@ func update_grid(empty_spaces:Array[Array]) -> void:
 			if empty_spaces[y][x] == false:
 				astar_grid.set_point_solid(Vector2i(x,y))
 	astar_grid.update()
+
+func get_shortest_path(from_pos: Vector2i, targets: Array[Vector2i]) -> PackedVector2Array:
+	var shortest_path: PackedVector2Array = PackedVector2Array()
+	var shortest_length: int = INF
+	for target in targets:
+		var path = astar_grid.get_id_path(from_pos, target)
+		if path.is_empty():
+			continue
+		var path_length = path.size()
+		if path_length < shortest_length:
+			shortest_length = path_length
+			shortest_path = astar_grid.get_point_path(from_pos, target)
+	return shortest_path

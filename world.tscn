@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://decugfypnphwq" path="res://tiles/tileset/floor.png" id="5_70uel"]
 [ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="6_hiqwa"]
 [ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="7_2u3nc"]
-[ext_resource type="Script" uid="uid://cofeonw2tmeay" path="res://robot_components/power_source.gd" id="9_ikiii"]
 [ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://interactables/recharge_machines.gd" id="10_cbp6q"]
 
 [node name="World" type="Node2D" unique_id=1242992929]
@@ -34,9 +33,6 @@ region_enabled = true
 region_rect = Rect2(110, 60, 10, 10)
 
 [node name="Navigation" type="Node" parent="Entities/WanderBot" unique_id=1811146124]
-
-[node name="Battery" type="Node" parent="Entities/WanderBot" unique_id=2058676489]
-script = ExtResource("9_ikiii")
 
 [node name="Interactables" type="Node2D" parent="." unique_id=2093705675]
 

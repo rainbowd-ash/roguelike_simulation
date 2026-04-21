@@ -1,8 +1,6 @@
 class_name Entity
 extends Node2D
 
-@export var power_source : PowerSource
-
 var grid_position : Vector2i
 
 var movement_path : Array
@@ -19,7 +17,6 @@ func _physics_process(_delta: float) -> void:
 		move_along_path()
 	else:
 		wait = wait - 1
-	
 
 func move_along_path():
 	if grid_position == destination_tile:
@@ -29,3 +26,6 @@ func move_along_path():
 	var next_tile = movement_path.pop_front()
 	position = Grid.grid_to_position(next_tile)
 	wait = movespeed
+
+func find_nearest_recharge(grid_position, %RechargeMachines.machine_locations):
+	
