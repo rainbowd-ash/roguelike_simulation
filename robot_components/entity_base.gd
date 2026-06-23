@@ -1,6 +1,8 @@
 class_name Entity
 extends Node2D
 
+signal bot_moved
+
 @onready var world: World = $"../.."
 
 var grid_position : Vector2i
@@ -26,6 +28,7 @@ func _physics_process(_delta: float) -> void:
 func continue_along_path():
 	grid_position = movement_path.pop_front()
 	position = Grid.grid_to_position(grid_position)
+	bot_moved.emit()
 	wait = movespeed
 
 func wander():

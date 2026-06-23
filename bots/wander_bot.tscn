@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="1_mjeju"]
 [ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="2_avwlk"]
+[ext_resource type="Script" uid="uid://nutfc7ks33fj" path="res://robot_components/battery.gd" id="3_avwlk"]
 
 [node name="WanderBot" type="Node2D" unique_id=716353204]
 script = ExtResource("1_mjeju")
@@ -13,3 +14,6 @@ region_enabled = true
 region_rect = Rect2(110, 60, 10, 10)
 
 [node name="Navigation" type="Node" parent="." unique_id=1368671110]
+
+[node name="Battery" type="Node" parent="." unique_id=1076544485]
+script = ExtResource("3_avwlk")

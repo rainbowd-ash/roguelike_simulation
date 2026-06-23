@@ -1,5 +1,5 @@
-class_name World
 extends Node2D
+class_name World
 
 var tile_size : Vector2 = Vector2(10,10)
 
