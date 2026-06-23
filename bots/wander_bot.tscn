@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dut5yvmixbs5m"]
+
+[ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="1_mjeju"]
+[ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="2_avwlk"]
+
+[node name="WanderBot" type="Node2D" unique_id=716353204]
+script = ExtResource("1_mjeju")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=904991775]
+position = Vector2(5, 5)
+texture = ExtResource("2_avwlk")
+region_enabled = true
+region_rect = Rect2(110, 60, 10, 10)
+
+[node name="Navigation" type="Node" parent="." unique_id=1368671110]

@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="roguelike_simulation"
+config/name="Robot Simulation"
 run/main_scene="uid://dqnhym6r8k7o4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
 Grid="*uid://bgnh732haal63"
+NavigationGrid="*uid://1q1v4u1cebx"
 
 [display]
 

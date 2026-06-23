@@ -1,5 +1,7 @@
-#class_name Grid
 extends Node
+#class_name Grid
+
+## Converts world/pixel coordinates to points on the pathfinding grid
 
 var tile_size : Vector2
 

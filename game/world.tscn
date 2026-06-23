@@ -1,38 +1,24 @@
 [gd_scene format=3 uid="uid://dqnhym6r8k7o4"]
 
-[ext_resource type="Script" uid="uid://dmhg5rd2hesv3" path="res://world.gd" id="1_wse8f"]
-[ext_resource type="Script" uid="uid://1q1v4u1cebx" path="res://a_star_grid.gd" id="2_ic0uy"]
-[ext_resource type="Texture2D" uid="uid://decugfypnphwq" path="res://tiles/tileset/floor.png" id="5_70uel"]
-[ext_resource type="Script" uid="uid://dppkm2clrowfg" path="res://robot_components/entity_base.gd" id="6_hiqwa"]
-[ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="7_2u3nc"]
-[ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://interactables/recharge_machines.gd" id="10_cbp6q"]
+[ext_resource type="Script" uid="uid://dmhg5rd2hesv3" path="res://game/world.gd" id="1_fhh06"]
+[ext_resource type="Texture2D" uid="uid://decugfypnphwq" path="res://tiles/tileset/floor.png" id="3_0q2ew"]
+[ext_resource type="PackedScene" uid="uid://dut5yvmixbs5m" path="res://bots/wander_bot.tscn" id="3_805w3"]
+[ext_resource type="Texture2D" uid="uid://c6ks5xx8eul55" path="res://tiles/tileset/cp437_10x10.png" id="5_6ib04"]
+[ext_resource type="Script" uid="uid://p2vr0k08sw0p" path="res://interactables/recharge_machines.gd" id="6_cjey8"]
 
 [node name="World" type="Node2D" unique_id=1242992929]
 scale = Vector2(1.5, 1.5)
-script = ExtResource("1_wse8f")
-
-[node name="AStarGrid" type="Node" parent="." unique_id=2051265867]
-unique_name_in_owner = true
-script = ExtResource("2_ic0uy")
+script = ExtResource("1_fhh06")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=550603305]
 modulate = Color(0.5890956, 0.5890956, 0.5890956, 1)
-texture = ExtResource("5_70uel")
+texture = ExtResource("3_0q2ew")
 centered = false
 
 [node name="Entities" type="Node2D" parent="." unique_id=1466909826]
 unique_name_in_owner = true
 
-[node name="WanderBot" type="Node2D" parent="Entities" unique_id=84570191]
-script = ExtResource("6_hiqwa")
-
-[node name="Sprite" type="Sprite2D" parent="Entities/WanderBot" unique_id=2116703556]
-position = Vector2(5, 5)
-texture = ExtResource("7_2u3nc")
-region_enabled = true
-region_rect = Rect2(110, 60, 10, 10)
-
-[node name="Navigation" type="Node" parent="Entities/WanderBot" unique_id=1811146124]
+[node name="WanderBot" parent="Entities" unique_id=716353204 instance=ExtResource("3_805w3")]
 
 [node name="Interactables" type="Node2D" parent="." unique_id=2093705675]
 
@@ -44,25 +30,25 @@ region_rect = Rect2(110, 60, 10, 10)
 
 [node name="RechargeMachines" type="Node2D" parent="Interactables" unique_id=389316661]
 unique_name_in_owner = true
-script = ExtResource("10_cbp6q")
+script = ExtResource("6_cjey8")
 
 [node name="RechargeMachine" type="Sprite2D" parent="Interactables/RechargeMachines" unique_id=672912648]
 position = Vector2(250, 220)
-texture = ExtResource("7_2u3nc")
+texture = ExtResource("5_6ib04")
 centered = false
 region_enabled = true
 region_rect = Rect2(20, 50, 10, 10)
 
 [node name="RechargeMachine2" type="Sprite2D" parent="Interactables/RechargeMachines" unique_id=320597661]
 position = Vector2(730, 80)
-texture = ExtResource("7_2u3nc")
+texture = ExtResource("5_6ib04")
 centered = false
 region_enabled = true
 region_rect = Rect2(20, 50, 10, 10)
 
 [node name="RechargeMachine3" type="Sprite2D" parent="Interactables/RechargeMachines" unique_id=402532436]
 position = Vector2(630, 350)
-texture = ExtResource("7_2u3nc")
+texture = ExtResource("5_6ib04")
 centered = false
 region_enabled = true
 region_rect = Rect2(20, 50, 10, 10)

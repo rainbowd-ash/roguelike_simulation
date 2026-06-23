@@ -14,6 +14,7 @@ var WALL = preload("res://tiles/terrain_tiles/wall.tres")
 
 func _ready() -> void:
 	world_gen()
+	spawn_wanderbots(20)
 	#%ProcGen/FactoryLayout.generate_factory_floor()
 	#%AStarGrid.update_grid()
 
@@ -34,7 +35,12 @@ func world_gen():
 	#for i in rechargers.size():
 		#var location = rechargers[i]
 		#floor_space[location.y][location.x] = false
-	%AStarGrid.update_grid(floor_space)
+	NavigationGrid.update_grid(floor_space)
+
+func spawn_wanderbots(amount : int):
+	const WANDER_BOT = preload("uid://dut5yvmixbs5m")
+	for i in amount:
+		$Entities.add_child(WANDER_BOT.instantiate())
 
 func set_cell(location : Vector2i, value) -> void:
 	var x = location.x
